@@ -1,0 +1,45 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.scoreboard {
+  flex: 7;
+  padding: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.coinLabel {
+  font-size: 2em;
+}
+
+.coinTotal {
+  font-size: 5em;
+}
+
+.memoButton {
+  flex: 5;
+}
+
+.memoImage {
+  height: 100%;
+  width: 100%;
+}
+
+.memoImageToggled {
+  border: 2px solid red;
+}
+
+.quitButton {
+  flex: 2;
+}
+
+.quitImage {
+  padding: 10px 0;
+  height: 100%;
+  width: 100%;
+}

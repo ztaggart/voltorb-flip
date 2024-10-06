@@ -1,3 +1,6 @@
+.sidebar {
+  display: flex;
+}
 .page {
   --gray-rgb: 0, 0, 0;
   --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
@@ -29,7 +32,7 @@
 
 .main {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 32px;
   grid-row-start: 2;
 }

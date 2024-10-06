@@ -11,6 +11,11 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
+const pokemon = localFont({
+  src: "./fonts/pokemon-font/pokemon-ds-font.ttf",
+  variable: "--font-pokemon",
+  weight: "100 900",
+});
 
 export const metadata = {
   title: "Create Next App",
@@ -20,7 +25,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`${geistSans.variable} ${geistMono.variable} ${pokemon.variable}`}
+      >
         {children}
       </body>
     </html>

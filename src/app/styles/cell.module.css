@@ -1,0 +1,46 @@
+.cell {
+  height: 100px;
+  width: 100px;
+  background-color: #c68982;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 4.5em;
+  cursor: pointer;
+}
+
+.cellSelected {
+  border: 2px solid red;
+}
+
+.cellImage {
+  width: 100%;
+  height: 100%;
+}
+
+.cellContent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  margin-left: 2px;
+}
+
+.unflippedContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.flippedContainer {
+  width: 100%;
+  height: 100%;
+}
+
+.cellMemo {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
