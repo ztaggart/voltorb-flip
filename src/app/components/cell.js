@@ -15,7 +15,7 @@ export default function Cell({ cell, clickHandler, toggleMemo, selected }) {
             <div className={styles.cellContent}>{cell.value}</div>
           ) : (
             <Image
-              src="/voltorb_full.png"
+              src="/voltorb-flip/voltorb_full.png"
               height={100}
               width={100}
               alt="flipped-voltorb"
@@ -30,7 +30,7 @@ export default function Cell({ cell, clickHandler, toggleMemo, selected }) {
         >
           <Image
             className={styles.cellImage}
-            src="/blanktile.svg"
+            src="/voltorb-flip/blanktile.svg"
             priority={true}
             alt="unflipped card"
             width={100}
@@ -40,7 +40,7 @@ export default function Cell({ cell, clickHandler, toggleMemo, selected }) {
             <Image
               className={styles.cellMemo}
               priority={true}
-              src="/voltorb_memo.png"
+              src="/voltorb-flip/voltorb_memo.png"
               width={80}
               height={80}
               alt="memo"

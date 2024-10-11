@@ -29,9 +29,9 @@ export default function Sidebar({
       </div>
       <div className={styles.memoButton}>
         <Image
-          src="/memo_button.png"
-          width={314}
-          height={358}
+          src="/voltorb-flip/memo_button.png"
+          width={157}
+          height={179}
           alt="Toggle memo"
           title="Toggle memo"
           className={`${styles.memoImage} ${
@@ -40,16 +40,6 @@ export default function Sidebar({
           onClick={() => toggleMemo()}
         ></Image>
       </div>
-      {/* <div className={styles.quitButton}>
-        <Image
-          src="/quit_button.png"
-          width={330}
-          height={142}
-          alt="Quit button"
-          title="Quit"
-          className={styles.quitImage}
-        ></Image>
-      </div> */}
     </div>
   );
 }

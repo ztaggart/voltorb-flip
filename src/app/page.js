@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Grid from "./components/grid";
 import styles from "./styles/page.module.css";
 import Sidebar from "./components/sidebar";
+import Head from "next/head";
 
 export default function Home() {
   const [totalCoins, setTotalCoins] = useState(0);
@@ -28,6 +29,9 @@ export default function Home() {
   }, [memoEnabled]);
   return (
     <div className={styles.page}>
+      <Head>
+        <title>Voltorb flip</title>
+      </Head>
       <main className={styles.main}>
         <Sidebar
           memoEnabled={memoEnabled}

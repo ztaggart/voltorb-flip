@@ -9,7 +9,7 @@ export default function CellTally({ cell, tally }) {
       </div>
       <div className={styles.bombDiv}>
         <Image
-          src="/voltorb_large.png"
+          src="/voltorb-flip/voltorb_large.png"
           alt="voltorb"
           width={60}
           height={60}
