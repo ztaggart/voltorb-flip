@@ -51,6 +51,15 @@
   justify-content: center;
   gap: 10px;
   width: 30%;
-  height: 10%;
+  height: 20%;
   background-color: black;
+}
+
+.gameOverText {
+  font-size: 2em;
+}
+
+.gameOverButton {
+  padding: 0.2em;
+  font-size: 1.5em;
 }

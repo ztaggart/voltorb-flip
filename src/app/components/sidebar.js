@@ -6,6 +6,7 @@ export default function Sidebar({
   currentCoins,
   memoEnabled,
   toggleMemo,
+  currentLevel,
 }) {
   return (
     <div className={styles.sidebar}>
@@ -24,7 +25,7 @@ export default function Sidebar({
             useGrouping: false,
           })}
         </div>
-        <div className={styles.coinLabel}>Level (level)</div>
+        <div className={styles.coinLabel}>Level {currentLevel}</div>
       </div>
       <div className={styles.memoButton}>
         <Image
@@ -39,7 +40,7 @@ export default function Sidebar({
           onClick={() => toggleMemo()}
         ></Image>
       </div>
-      <div className={styles.quitButton}>
+      {/* <div className={styles.quitButton}>
         <Image
           src="/quit_button.png"
           width={330}
@@ -48,7 +49,7 @@ export default function Sidebar({
           title="Quit"
           className={styles.quitImage}
         ></Image>
-      </div>
+      </div> */}
     </div>
   );
 }

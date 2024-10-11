@@ -8,6 +8,12 @@ export default function Home() {
   const [totalCoins, setTotalCoins] = useState(0);
   const [currentCoins, setCurrentCoins] = useState(0);
   const [memoEnabled, setMemoEnabled] = useState(0);
+  const [currentLevel, setCurrentLevel] = useState(1);
+
+  useEffect(() => {
+    let coins = Number(localStorage.getItem("totalCoins")) || 0;
+    setTotalCoins(coins);
+  }, []);
 
   useEffect(() => {
     const keyDown = (e) => {
@@ -28,11 +34,16 @@ export default function Home() {
           totalCoins={totalCoins}
           currentCoins={currentCoins}
           toggleMemo={() => setMemoEnabled(!memoEnabled)}
+          currentLevel={currentLevel}
         ></Sidebar>
         <Grid
           memoEnabled={memoEnabled}
           setCurrentCoins={setCurrentCoins}
-          addTotalCoins={(coinsWon) => setTotalCoins(totalCoins + coinsWon)}
+          addTotalCoins={(coinsWon) => {
+            setTotalCoins(totalCoins + coinsWon);
+            localStorage.setItem("totalCoins", totalCoins + coinsWon + "");
+          }}
+          setCurrentLevel={setCurrentLevel}
         ></Grid>
       </main>
     </div>

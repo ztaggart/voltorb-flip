@@ -6,14 +6,24 @@ import CellTally from "./cell-tally";
 
 const TOTAL_CELLS = GRID_HEIGHT * GRID_WIDTH;
 
-export default function Grid({ memoEnabled, setCurrentCoins, addTotalCoins }) {
-  const [grid, setGrid] = useState(new GridModel(winCallback));
+export default function Grid({
+  memoEnabled,
+  setCurrentCoins,
+  addTotalCoins,
+  setCurrentLevel,
+}) {
+  const [grid, setGrid] = useState(new GridModel(winCallback, loseCallback));
   const [selectedCellIndex, setSelectedCellIndex] = useState(0);
   const gridElement = useRef(null);
 
-  function winCallback(coinsWon) {
-    console.log("won callback");
+  function winCallback(coinsWon, level) {
     addTotalCoins(coinsWon);
+    setCurrentLevel(level);
+  }
+
+  function loseCallback(level) {
+    console.log("lose callback", level);
+    setCurrentLevel(level);
   }
 
   const clickCell = useCallback(
@@ -89,7 +99,7 @@ export default function Grid({ memoEnabled, setCurrentCoins, addTotalCoins }) {
     }
   }, [grid, setGrid]);
   return (
-    <div className={styles.OuterGridContainer} ref={gridElement}>
+    <div className={styles.outerGridContainer} ref={gridElement}>
       <div className={styles.gridColContainer}>
         <div className={styles.gridRowContainer}>
           <div className={styles.innerGridContainer}>
@@ -140,9 +150,14 @@ export default function Grid({ memoEnabled, setCurrentCoins, addTotalCoins }) {
       {(grid.won || grid.lost) && (
         <div className={styles.frostedContainer}>
           <div className={styles.gameOverContainer}>
-            <div>{grid.won ? "YOU WON!" : "YOU LOST :("}</div>
-            <button onClick={() => setGrid(grid.initialize())}>
-              PLAY AGAIN?
+            <div className={styles.gameOverText}>
+              {grid.won ? "YOU WON!" : "YOU LOST :("}
+            </div>
+            <button
+              className={styles.gameOverButton}
+              onClick={() => setGrid(grid.initialize())}
+            >
+              {grid.won ? "NEXT LEVEL" : "PLAY AGAIN?"}
             </button>
           </div>
         </div>
