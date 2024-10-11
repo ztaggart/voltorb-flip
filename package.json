@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "next": "14.2.13",
@@ -17,6 +19,8 @@
     "@types/node": "22.6.1",
     "@types/react": "18.3.9",
     "eslint": "^8",
-    "eslint-config-next": "14.2.13"
-  }
+    "eslint-config-next": "14.2.13",
+    "gh-pages": "^6.2.0"
+  },
+  "homepage": "http://ztaggart.github.io/voltorb-flip"
 }
